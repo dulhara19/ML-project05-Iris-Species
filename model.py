@@ -17,3 +17,6 @@ df['species'] = le.fit_transform(df['species'])
 # Split into features (X) and target (y)
 X = df.drop(columns=['species'])
 y = df['species']
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
