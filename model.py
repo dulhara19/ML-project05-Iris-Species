@@ -28,3 +28,7 @@ rf.fit(X_train, y_train)
 
 # Predictions
 y_pred = rf.predict(X_test)
+
+# Evaluation
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Classification Report:\n", classification_report(y_test, y_pred))
