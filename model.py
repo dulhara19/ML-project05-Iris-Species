@@ -5,3 +5,15 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
+# Load dataset from CSV
+df = pd.read_csv("iris.csv")  # Update with your file path if needed
+
+# Encode species column (if it's categorical)
+le = LabelEncoder()
+df['species'] = le.fit_transform(df['species'])
+
+
+# Split into features (X) and target (y)
+X = df.drop(columns=['species'])
+y = df['species']
